@@ -1,5 +1,5 @@
 const req = require('request');
-const googleApiKey = require('./googleApiKey') || process.env.googleApiKey;
+const googleApiKey =  process.env.googleApiKey || require('./googleApiKey');
 
 const geocode = (address, callback) => {
   const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(address) + '&key='+googleApiKey + '&language=ru';

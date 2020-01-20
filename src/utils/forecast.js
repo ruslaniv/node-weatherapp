@@ -1,5 +1,5 @@
 const req = require('request');
-const darkSkyApiKey = require('./darkSkyApiKey') || process.env.darkSkyApiKey;
+const darkSkyApiKey = process.env.darkSkyApiKey || require('./darkSkyApiKey');
 
 const forecast = (arg_lat, arg_long, callback) => {
   url = 'https://api.darksky.net/forecast/' + darkSkyApiKey + '/'+ arg_lat +',' + arg_long + '?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si';

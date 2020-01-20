@@ -1,5 +1,5 @@
 const req = require('request');
-const googleApiKey = require('./keys');
+const googleApiKey = require('./googleApiKey');
 
 const geocode = (address, callback) => {
   // const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(address) + '&key='+google_api_key;
@@ -7,9 +7,9 @@ const geocode = (address, callback) => {
   //console.log(url)
   req({url, json:true}, (error, response) => {
     if (error) {
-      callback('Some error occurred!', undefined)
+      callback('Some error occurred at Google!', undefined)
     } else if (response.body.error_message) {
-      callback('Some another 0 error occurred!', undefined)
+      callback('Some another 0 error occurred at Google!', undefined)
     } else {
       callback(undefined, {
         latitude: response.body.results[0].geometry.location.lat,

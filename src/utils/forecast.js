@@ -17,13 +17,18 @@ const forecast = (arg_lat, arg_long, callback) => {
       } else if (response.body.currently.precipType == 'rain'){
         response.body.currently.precipType = 'дождь'
       }
-      callback(undefined,
-        //data:response.body
-        'Сводка: ' + response.body.currently.summary +
-        '; температура: ' + response.body.currently.temperature +
-        '; ветер: ' + response.body.currently.windSpeed +
-        '; ощущается как: ' + response.body.currently.apparentTemperature +
-        '; осадки: ' + response.body.currently.precipType
+      callback(undefined, {
+        summary: 'Сводка: ' + response.body.currently.summary,
+        temp: 'Температура: ' + response.body.currently.temperature + '\u00B0' +'C',
+        wind: 'Ветер: ' + response.body.currently.windSpeed + ' м/с',
+        feel: 'Ощущается как: ' + response.body.currently.apparentTemperature + '\u00B0' +'C',
+        precip: 'Осадки: ' + response.body.currently.precipType,
+        //summary: 'Сводка: ' + response.body.currently.summary +
+        // temp: '; температура: ' + response.body.currently.temperature + '\u00B0' +'C' +
+        // wind: '; ветер: ' + response.body.currently.windSpeed + ' м/с' +
+        // feel: '; ощущается как: ' + response.body.currently.apparentTemperature + '\u00B0' +'C' +
+        // precip: '; осадки: ' + response.body.currently.precipType
+        }
       )
     }
   })

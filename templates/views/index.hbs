@@ -12,9 +12,12 @@
     <input type="text" placeholder="Enter location">
     <button>Get it!</button>
   </form>
-  <p id="location"></p>
-  <p id="forecast"></p>
+  <div id="location"></div>
+  <div id="forecast"></div>
   {{>footer}}
 </body>
 <script src="/js/script.js"></script>
+<script>
+  document.querySelector('input').focus();
+</script>
 </html>

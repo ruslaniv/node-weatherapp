@@ -1,5 +1,3 @@
-console.log('Loaded!');
-
 const address = document.getElementById('location');
 const forecast = document.getElementById('forecast');
 const search = document.querySelector('input');
@@ -16,7 +14,15 @@ weatherForm.addEventListener('submit', (e) => {
         address.textContent = data.error
       } else {
         address.textContent = data.location;
-        forecast.textContent = data.forecast;
+        const entries = Object.entries(data.forecast);
+        for (const weatherData of entries){
+          let newParagraph = document.createElement('p');
+          let forecastText = document.createTextNode(weatherData[1]);
+          newParagraph.appendChild(forecastText);
+          forecast.appendChild(newParagraph);
+          search.value = '';
+          search.focus();
+        }
       }
     })
   });

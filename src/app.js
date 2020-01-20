@@ -12,6 +12,8 @@ const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
 
 const app = e();
+const port = process.env.PORT || 3000;
+
 app.use(e.static(staticPath));
 app.set('view engine', 'hbs');
 app.set('views', viewPath);
@@ -71,6 +73,5 @@ app.get('*', (req, res) => {
   })
 });
 
-app.listen(3000, () => {
-  console.log('Server is up')
+app.listen(port, () => {
 });

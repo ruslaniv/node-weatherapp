@@ -10,6 +10,13 @@ const forecast = (arg_lat, arg_long, callback) => {
     } else if (response.body.currently == undefined){
       callback('Error from forecast #2', undefined)
     } else {
+      if (!response.body.currently.precipType){
+        response.body.currently.precipType = 'отсутствуют'
+      } else if (response.body.currently.precipType == 'snow'){
+        response.body.currently.precipType = 'снег'
+      } else if (response.body.currently.precipType == 'rain'){
+        response.body.currently.precipType = 'дождь'
+      }
       callback(undefined,
         //data:response.body
         'Сводка: ' + response.body.currently.summary +

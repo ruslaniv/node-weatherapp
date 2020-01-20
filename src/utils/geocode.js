@@ -3,7 +3,6 @@ const googleApiKey = require('./googleApiKey');
 
 const geocode = (address, callback) => {
   const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(address) + '&key='+googleApiKey + '&language=ru';
-  console.log(url);
   req({url, json:true}, (error, response) => {
     if (error) {
       callback('No network connection, try again later (Google)', undefined)

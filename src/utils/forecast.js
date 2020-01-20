@@ -1,7 +1,8 @@
 const req = require('request');
+const darkSkyApiKey = require('./keys');
 
 const forecast = (arg_lat, arg_long, callback) => {
-  url = 'https://api.darksky.net/forecast/47132c5005aaae5cda110432d30c6e54/'+ arg_lat +',' + arg_long + '?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si';
+  url = 'https://api.darksky.net/forecast/' + darkSkyApiKey + '/'+ arg_lat +',' + arg_long + '?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si';
   req ({url, json:true}, (error, response) => {
     if (error) {
       callback('Error from forecast', undefined)

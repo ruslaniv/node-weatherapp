@@ -1,9 +1,9 @@
 const req = require('request');
-const google_api_key = "AIzaSyC5KLwV2raFEmh5f7DeHK1xAHsMf-rdp68";
+const googleApiKey = require('./keys');
 
 const geocode = (address, callback) => {
   // const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(address) + '&key='+google_api_key;
-  const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key='+google_api_key;
+  const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key='+googleApiKey;
   //console.log(url)
   req({url, json:true}, (error, response) => {
     if (error) {

@@ -7,13 +7,15 @@
 </head>
 <body>
   {{>header}}
-<!--  <img src="/img/1.jpg" alt="Home pic">-->
-  <form action="">
-    <input type="text" placeholder="Enter location">
-    <button>Get it!</button>
-  </form>
-  <div id="location"></div>
-  <div id="forecast"></div>
+  <div id="content">
+    <form action="">
+      <input type="text" placeholder="Enter location">
+      <button>Get it!</button>
+    </form>
+    <h1>Погода для:</h1>
+    <div id="location"></div>
+    <div id="forecast"></div>
+  </div>
   {{>footer}}
 </body>
 <script src="/js/script.js"></script>

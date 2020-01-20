@@ -23,8 +23,8 @@ const forecast = (arg_lat, arg_long, callback) => {
 
 module.exports = forecast;
 
-//Origincal forecast code
-// url = ('https://api.darksky.net/forecast/47132c5005aaae5cda110432d30c6e54/'+latitude+','+longitude+'?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si');
+//Original forecast code
+// url = ('https://api.darksky.net/forecast/' + key + '/'+latitude+','+longitude+'?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si');
 // //console.log(url);
 // req ({url:url, json:true}, (error, response) => {
 //   //console.log(response.body);

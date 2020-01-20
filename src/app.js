@@ -26,29 +26,15 @@ app.get('', (req, res) => {
 app.get('/about', (req, res) => {
   res.render('about', {
     title: 'About page',
-    name: 'Gido Van Rossum',
+    name: 'Ruslan',
   })
 });
 app.get('/help', (req, res) => {
   res.render('help', {
-    title: 'halpful Help page',
-    name: 'Gido Van Rossum',
+    title: 'halpful HELP page',
+    name: 'Ruslan',
   })
 });
-// app.get('', (req, res) => {
-//   res.send('<h1>Hello world!</h1>')
-// });
-//
-// app.get('/help', (req, res) => {
-//   res.send({
-//     page:'Help',
-//     about:'halpful',
-//   })
-// });
-//
-// app.get('/about', (req, res) => {
-//   res.send('This is about coming from res.send')
-// });
 
 app.get('/w', (req, res) => {
   let finalResponse = {};
@@ -71,18 +57,11 @@ app.get('/w', (req, res) => {
       res.send(finalResponse)
     });
   });
-  // res.send({
-  //   address: req.query.address,
-  //   temp: +27,
-  //   message: 'rainy',
-  // })
-  //console.log('=============================' + '\n' + finalResponse);
-  //res.send(finalResponse)
 });
 
 app.get('/help/*', (req, res) => {
   res.render('404', {
-    errorMessage: 'This HALP page will never be really found'
+    errorMessage: 'This halpful HELP article will never be found'
   })
 });
 

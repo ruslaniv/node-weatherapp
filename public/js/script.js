@@ -1,8 +1,5 @@
 console.log('Loaded!');
-// const img = document.getElementsByTagName('img');
-// img[0].addEventListener('click', function () {
-//   alert('Clicked');
-// });
+
 const address = document.getElementById('location');
 const forecast = document.getElementById('forecast');
 const search = document.querySelector('input');

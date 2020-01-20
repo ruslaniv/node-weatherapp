@@ -23,7 +23,7 @@ module.exports = geocode;
 
 // Original geocode code
 //
-// let url = ('https://maps.googleapis.com/maps/api/geocode/json?address='+address+'&key='+google_api_key);
+// let url = ('https://maps.googleapis.com/maps/api/geocode/json?address='+address+'&key='+googleApiKey);
 // req ({url:url, json:true}, (error, response) => {
 //   if (error){
 //     console.log('Error!')

@@ -6,7 +6,7 @@ const forecast = (arg_lat, arg_long, callback) => {
   url = 'https://api.darksky.net/forecast/' + darkSkyApiKey + '/'+ arg_lat +',' + arg_long + '?exclude=minutely,hourly,daily,alerts,flags&lang=ru&units=si';
   req ({url, json:true}, (error, response) => {
     if (error) {
-      callback('Error from forecast', undefined)
+      callback('No network connection, try again later (DarkSky)', undefined)
     } else if (response.body.currently == undefined){
       callback('Error from forecast #2', undefined)
     } else {

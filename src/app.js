@@ -40,11 +40,11 @@ app.get('/w', (req, res) => {
   let finalResponse = {};
   if (!req.query.address) {
     return res.send({
-      error: 'You must provide address'
+      error: 'You must provide location to search'
     })
   }
   finalResponse.address = req.query.address;
-  geocode(req.query.address, (error, {location, latitude, longitude}) => { // destructuring of data=>data.location etc
+  geocode(req.query.address, (error, {location, latitude, longitude} ={}) => { // destructuring of data=>data.location etc
     if (error) {
       return res.send({error})
     }

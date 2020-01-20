@@ -2,14 +2,14 @@ const req = require('request');
 const googleApiKey = require('./googleApiKey');
 
 const geocode = (address, callback) => {
-  // const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + encodeURIComponent(address) + '&key='+google_api_key;
   const url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' + address + '&key='+googleApiKey;
-  //console.log(url)
   req({url, json:true}, (error, response) => {
     if (error) {
-      callback('Some error occurred at Google!', undefined)
+      callback('No network connection, try again later (Google)', undefined)
     } else if (response.body.error_message) {
-      callback('Some another 0 error occurred at Google!', undefined)
+      callback('You must provide a location to search', undefined)
+    } else if (response.body.status == "ZERO_RESULTS") {
+      callback('Unable to find this location, try another location', undefined)
     } else {
       callback(undefined, {
         latitude: response.body.results[0].geometry.location.lat,

@@ -22,13 +22,7 @@ const forecast = (arg_lat, arg_long, callback) => {
         wind: 'Ветер: ' + response.body.currently.windSpeed + ' м/с',
         feel: 'Ощущается как: ' + response.body.currently.apparentTemperature + '\u00B0' +'C',
         precip: 'Осадки: ' + response.body.currently.precipType,
-        //summary: 'Сводка: ' + response.body.currently.summary +
-        // temp: '; температура: ' + response.body.currently.temperature + '\u00B0' +'C' +
-        // wind: '; ветер: ' + response.body.currently.windSpeed + ' м/с' +
-        // feel: '; ощущается как: ' + response.body.currently.apparentTemperature + '\u00B0' +'C' +
-        // precip: '; осадки: ' + response.body.currently.precipType
-        }
-      )
+      })
     }
   })
 };
